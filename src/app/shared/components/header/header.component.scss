@@ -1,0 +1,122 @@
+@import "/src/styles.scss";
+
+.header {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: $background-color;
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.25);
+  nav {
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+    background-color: $background-color;
+    color: $color-secondary;
+  }
+  &__logo {
+    margin: .5rem;
+    text-decoration: none;
+    color: #fff;
+    p {
+      font-weight: $font-weight-Bold;
+      span {
+        color: $color-primary;
+      }
+    }
+  }
+  &__burger {
+    margin: .5rem;
+    cursor: pointer;
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $color-primary;
+      transition: all 0.3s ease-in-out;
+      transform-origin: 3px 1px;
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+    &.menu-open {
+      > span {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__links {
+    a {
+      cursor: pointer;
+      position: relative;
+      color: $color-secondary;
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 5px;
+        left: 0;
+        right: 0;
+        bottom: -22px;
+        background-color: $color-primary;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      &:hover {
+        color: $color-primary;
+        &::before {
+          opacity: 1;
+        }
+      }
+      &.active {
+        color: $color-primary;
+      }
+    }
+  }
+  &__menu {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    background: $color-primary;
+    padding: 1.625rem;
+    a {
+      cursor: pointer;
+      color: $color-secondary;
+      padding: 0.625rem;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+@include breakpoint-up(xlarge) {
+  .header__logo {
+    font-size: $big-font-size;
+  }
+  .header__links {
+    font-size: $h2-font-size;
+  }
+}
+@include breakpoint-down(xlarge) {
+  .header__logo {
+    font-size: $big-font-size;
+  }
+  .header__links {
+    font-size: $h3-font-size;
+  }
+}
+
+.display-none {
+  display: none;
+}

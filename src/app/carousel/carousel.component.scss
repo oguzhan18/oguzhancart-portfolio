@@ -1,0 +1,112 @@
+@import "/src/styles.scss";
+ul,
+li {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.skills__content-list-item-rows {
+  @include breakpoint-up(xlarge) {
+    left: -375px;
+    height: 33.3333%;
+    top: 34%;
+  }
+  @include breakpoint-down(xlarge) {
+    left: -374px;
+    height: 33.3333%;
+    top: 34%;
+  }
+  @include breakpoint-down(large) {
+    left: -5px;
+    transform: rotate(90deg);
+    .prev{
+      transform: rotate(270deg);
+    }
+    .next{
+      transform: rotate(90deg);
+    }
+    top: -61px;
+    height: 210px;
+  }
+  @include breakpoint-down(medium) {
+    left: 98px;
+    transform: rotate(0deg);
+    .prev{
+      transform: rotate(0deg);
+    }
+    top: 28px;
+    height: 210px;
+  }
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+}
+.next {
+  transform: rotate(180deg);
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.skills__content-list-item {
+  .skills__content-list-item-options {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    h3 {
+      text-align: center;
+      margin: 30px 0 30px 0;
+      width: 108px;
+      font-weight: $font-weight-Regular;
+      font-size: $h2-font-size;
+      left: 0;
+      white-space: nowrap;
+    }
+  }
+  .skills__content-list-item-content {
+    width: 749px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    h3 {
+      margin: 30px 0 30px 0;
+      font-weight: $font-weight-Regular;
+      font-size: $h2-font-size;
+    }
+    ul {
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      justify-items: center;
+      width: 100%;
+      align-content: center;
+      justify-content: center;
+      padding: 0 !important;
+    }
+  }
+}
+
+.image {
+  display: inline-block;
+  width: 115px;
+  object-fit: contain;
+  margin: 20px;
+  filter: grayscale(0);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    filter: grayscale(1);
+  }
+}

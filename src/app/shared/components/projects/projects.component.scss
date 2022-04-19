@@ -1,0 +1,64 @@
+@import "/src/styles.scss";
+
+drag-scroll {
+  width: 100%;
+  overflow-y: hidden;
+  
+  /* height: 500px; */
+  -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.projects{
+  position: relative;
+  padding-top: 200px;
+}
+
+.projects__title{
+    color: #fff;
+    text-align: center;
+    font-size: $big-font-size;
+    margin-bottom: $mb-3;
+}
+.projects__card{
+    cursor: pointer;
+    filter: grayscale(0);
+    color: #fff;
+    transition: filter 0.3s ease-in-out;
+    p{
+        font-size: $small-font-size;
+        font-weight: $font-weight-Light;
+        margin-bottom: $mb-1;
+    }
+    h3{
+        font-size: $h2-font-size;
+        font-weight: $font-weight-Regular;
+        margin-bottom: $mb-1;
+    }
+    &:hover{
+        filter: grayscale(1);
+    }
+}
+
+@include breakpoint-down(medium) {
+  .projects__card {
+    margin: 0.5rem;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+@include breakpoint-up(medium) {
+  .projects__card {
+    margin: 0 2.5rem;
+    img {
+      height: 400px;
+      width: 400px;
+      object-fit: contain;
+    }
+  }
+}

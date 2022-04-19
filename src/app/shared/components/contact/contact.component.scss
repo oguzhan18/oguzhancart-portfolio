@@ -1,0 +1,100 @@
+@import "/src/styles.scss";
+.contact {
+  padding-top: 150px;
+  margin: .5rem;
+}
+.contact__container {
+  font-weight: $font-weight-Regular;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  .contact__information {
+    display: flex;
+    margin-bottom: $mb-2;
+    align-items: center;
+    @include breakpoint-down(large) {
+        justify-content: left;
+      }
+  }
+}
+.contact__form,.contact-content-information{
+    width: 400px;
+}
+.contact__icon {
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  color: $color-primary;
+  margin-right: $mb-0-75;
+}
+.contact__title {
+  font-size: $h3-font-size;
+  font-weight: $font-weight-Medium;
+  color: $color-secondary;
+}
+.contact__subtitle {
+  font-size: $normal-font-size;
+  font-weight: $font-weight-Regular;
+  color: $color-secondary;
+}
+.contact__content {
+  background-color: $input-color;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.contact__label {
+  font-weight: $font-weight-Regular;
+  font-size: $normal-font-size;
+  color: $background-color;
+}
+
+.contact__input {
+  width: 100%;
+  background-color: $input-color;
+  color: $text-color;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: $font-weight-Light;
+  font-size: $normal-font-size;
+  border: none;
+  outline: none;
+  padding-bottom: $mb-0-5;
+}
+.contact__form-button {
+  width: 230px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $background-color;
+  color: $color-primary;
+  font-family: "Ubuntu-Medium", sans-serif;
+  padding: 7px 0;
+  margin-top: $mb-0-75;
+  font-weight: 400;
+  border-radius: 40px;
+  border: 2px solid #5271ff;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  &:hover {
+    background: $color-primary;
+    color: $color-secondary;
+    img {
+      filter: brightness(500%);
+    }
+  }
+
+  p {
+    display: inline-block;
+    font-size: $h3-font-size;
+  }
+  .contact__form-icon {
+    width: 20px;
+    margin-top: 7px;
+    height: 100%;
+    margin-left: 0.225rem;
+  }
+}
+.resizeNone {
+  resize: none;
+}

@@ -1,0 +1,79 @@
+<section class="contact" id="contact">
+  <h2 class="section__title">Contact Me</h2>
+  <span class="section__subtitle">Get in touch</span>
+  <div class="contact__container flex">
+    <div class="contact-content-information">
+      <div class="contact__information">
+        <i
+          ><img
+            src="../assets/icons/phone.svg"
+            alt="icono phone"
+            class="contact__icon"
+        /></i>
+        <div>
+          <h3 class="contact__title">Call Me</h3>
+          <a href="tel:+905372503818" class="contact__subtitle">+90 537 250 3818</a>
+        </div>
+      </div>
+      <div class="contact__information">
+        <i
+          ><img
+            src="../assets/icons/envelope.svg"
+            alt="icono email"
+            class="contact__icon"
+        /></i>
+        <div>
+          <h3 class="contact__title">Email</h3>
+          <a href="mailto:oguzhancart1@gmail.com?Subject=Web%20Site%20Üzerinden%20Geliyorum%20!!!" class="contact__subtitle">oguzhancart1@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact__information">
+        <i
+          ><img
+            src="../assets/icons/location-point.svg"
+            alt="icono ubicacion"
+            class="contact__icon"
+        /></i>
+        <div>
+          <h3 class="contact__title">Location</h3>
+          <a href="https://goo.gl/maps/L24nHPhTiJdV55Jh7" target="__blank" class="contact__subtitle">Istanbul - Turkey</a>
+        </div>
+      </div>
+    </div>
+    <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()" class="contact__form grid">
+      <div class="contact__inputs grid">
+        <div class="contact__content">
+          <label for="name" class="contact__label">Name</label>
+          <input type="text" class="contact__input" formControlName="name" name="name" id="name" required />
+        </div>
+        <div class="contact__content">
+          <label for="email" class="contact__label">Email</label>
+          <input type="email" class="contact__input" formControlName="email" name="email" id="email"  required />
+        </div>
+        <div class="contact__content">
+          <label for="message" class="contact__label">Message</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="0"
+            rows="7"
+            class="contact__input resizeNone"
+            formControlName="message"
+            required
+          ></textarea>
+        </div>
+        <div>
+          <button type="submit" class="contact__form-button button--flex">
+            <p>Send Message</p>
+            <i class="button__icon"
+              ><img
+                src="../assets/icons/message.svg"
+                alt=""
+                class="contact__form-icon"
+            /></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

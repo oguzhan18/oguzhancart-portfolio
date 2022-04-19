@@ -1,0 +1,18 @@
+<section class="carousel-wrapper container" [ngStyle]="carouselWrapperStyle">
+    <ul class="carousel-inner" #carousel [ngStyle]="carouselWrapperStyle">
+        <li *ngFor="let item of items" #carousel_item>
+            <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+        </li>
+    </ul>
+    <ng-container *ngIf="showControls">
+        <div class="skills__content-list-item-rows container">
+            <a href="javascript:void(0)" (click)="prev()">
+                <img src="../../assets/icons/arrow.svg" alt="arrow" height="30px" width="30px" class="prev" />
+            </a>
+            <a href="javascript:void(0)" (click)="next()">
+                <img src="../../assets/icons/arrow.svg" alt="arrow" height="30px" width="30px" class="next"
+                    role="button" />
+            </a>
+        </div>
+    </ng-container>
+</section>

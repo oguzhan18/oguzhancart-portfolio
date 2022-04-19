@@ -1,0 +1,36 @@
+<header class="header">
+    <nav class="container flex flex-jc-sb flex-ai-c" id="navbar">
+      <a href="#home" class="header__logo">
+        <p>Oğuzhan<span> ÇART</span></p>
+      </a>
+      <div
+        #hamburger
+        class="header__burger hide-for-desktop"
+        (click)="openMenu()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="header__links hide-for-mobile">
+        <ng-container *ngFor="let key of objectKeys(navlist); index as i">
+          <a
+            #asList
+            (click)="change(i)"
+            href="#{{key}}"
+            >{{ navlist[key] }}</a
+          >
+        </ng-container>
+      </div>
+    </nav>
+    <div #headerMenu class="header__menu display-none">
+      <ng-container *ngFor="let key of objectKeys(navlist); index as i">
+        <a
+          #asList
+          (click)="change(i)"
+          href="#{{ key }}"
+          >{{ navlist[key] }}</a
+        >
+      </ng-container>
+    </div>
+  </header>

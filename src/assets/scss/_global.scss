@@ -1,0 +1,168 @@
+
+@import '/src/assets/scss/mixins';
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+$header-height: 4rem;
+
+$color-primary: #5271ff;
+$color-secondary: #ffffff;
+$background-color: #020414;
+$text-color: #6a6c7c;
+$text-color-light: #9fa0ad;
+$input-color: #eeeffc;
+$font-family: "Ubuntu", sans-serif;
+
+$very-big-font-size: 3rem;
+$big-font-size: 2rem;
+$h1-font-size: 1.5rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1.125rem;
+$normal-font-size: 0.938rem;
+$small-font-size: 0.875rem;
+$smaller-font-size: 0.75rem;
+
+$font-weight-Light: 300;
+$font-weight-Regular: 400;
+$font-weight-Medium: 500;
+$font-weight-Bold: 700;
+
+$mb-0-25: 0.25rem;
+$mb-0-5: 0.5rem;
+$mb-0-75: 0.75rem;
+$mb-1: 1rem;
+$mb-1-5: 1.5rem;
+$mb-2: 2rem;
+$mb-2-5: 2.5rem;
+$mb-3: 3rem;
+
+$z-tooltip: 10;
+$z-fixed: 100;
+$z-modal: 1000;
+
+.flex {
+  display: flex;
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-jc-c {
+    justify-content: center;
+  }
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 ;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  width: 100%;
+  padding-right: var( 0.75rem, 0.75rem);
+  padding-left: var( 0.75rem, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container-sm, .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-md, .container-sm, .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container-lg, .container-md, .container-sm, .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1320px;
+  }
+}
+.section__title {
+  font-family: $font-weight-Regular;
+  font-size: $big-font-size;
+  margin-bottom: 0 !important;
+}
+.section__subtitle {
+  display: block;
+  font-size: $h2-font-size;
+  font-weight: $font-weight-Light;
+  margin-bottom: $mb-3;
+}
+.section__title,
+.section__subtitle {
+  color: $color-secondary;
+  text-align: center;
+}
+
+.button {
+  margin-top: $mb-0-5;
+  margin-bottom: $mb-0-5;
+  margin-right: $mb-0-5;
+  width: 9rem;
+  text-align: center;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  font-size: $h3-font-size;
+  color: $color-secondary;
+  border:1px solid $color-primary;
+  font-weight: $font-weight-Regular;
+  background-color: $color-primary;
+  transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: $background-color;
+        border:1px solid $color-primary;
+        color: $color-primary;
+    }
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hide-for-mobile{
+  @include breakpoint-down(large) {
+    display: none;
+  }
+}
+
+.hide-for-desktop{
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

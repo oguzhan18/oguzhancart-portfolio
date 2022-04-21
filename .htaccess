@@ -1,18 +1,15 @@
-# Sin www
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTP_HOST} !^oguzhancart.totalh.net$ [NC]
 RewriteRule ^(.*)$ http://oguzhancart.totalh.net//$1 [R=301,L]
 
 
-# Si se solicita un activo o directorio existente, acceda a él tal como está
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
 RewriteRule ^ - [L]
 # Si el recurso solicitado no existe, use index.html
 RewriteRule ^ /index.html
 
-# BEGIN DISABLE HSTS
 <IfModule mod_headers.c>
 Header always set Strict-Transport-Security "max-age=0; includeSubDomains;"
 </IfModule>
